@@ -5,6 +5,7 @@ from rest_framework import status
 from EmployeeApp.models import Department, Employee
 from EmployeeApp.serializers import DepartmentSerializer, EmployeeSerializer
 
+
 # Create your views here.
 
 # Department endpoints
@@ -12,8 +13,8 @@ from EmployeeApp.serializers import DepartmentSerializer, EmployeeSerializer
 @api_view(['GET'])
 def departments_list(request):
     departments = Department.objects.all()
-    serDepartments = DepartmentSerializer(departments, many=True)
-    return Response(serDepartments.data)
+    ser_departments = DepartmentSerializer(departments, many=True)
+    return Response(ser_departments.data)
 
 
 # Create department
@@ -26,23 +27,22 @@ def create_department(request):
     return Response(serializer.errors)
 
 
-# Multiple methods on signle department
+# Multiple methods on single department
 @api_view(['GET', 'PUT', 'DELETE'])
-def department(request, id):
+def department_methods(request, id):
     try:
         department = Department.objects.get(pk=id)
         if request.method == 'GET':
-            departmentSer = DepartmentSerializer(department)
-            return Response(departmentSer.data)
+            department_ser = DepartmentSerializer(department)
+            return Response(department_ser.data)
         
         elif request.method == 'PUT':
-            departmentSer = DepartmentSerializer(department, data=request.data)
-            if departmentSer.is_valid():
-                departmentSer.save()
+            department_ser = DepartmentSerializer(department, data=request.data)
+            if department_ser.is_valid():
+                department_ser.save()
                 return Response('Department updated successfully')
-            return Response(departmentSer.errors, status=status.HTTP_400_BAD_REQUEST)
+            return Response(department_ser.errors, status=status.HTTP_400_BAD_REQUEST)
 
-        
         elif request.method == 'DELETE':
             department.delete()
             return Response('Department deleted successfully')
