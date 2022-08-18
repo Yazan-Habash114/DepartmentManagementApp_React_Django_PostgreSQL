@@ -19,7 +19,7 @@ class DepartmentSerializer(serializers.ModelSerializer):
 class EmployeeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Employee
-        fields = ('employeeId', 'employeeName', 'dateOfJoining', 'department')
+        fields = "__all__"
     
     def create(self, data):
         return Employee.objects.create(**data)

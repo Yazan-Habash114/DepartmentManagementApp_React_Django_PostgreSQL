@@ -2,9 +2,17 @@ from django.urls import path
 from EmployeeApp.views import *
 
 urlpatterns = [
-    path('departments/', departments_list),
-    path('departments/<int:id>', department_methods),
+    # As @api_view(['method_name'])
     path('departments/create', create_department),
-    path('employees/register', register_emp),
-    path('employees/', employees_list)
+
+    # As APIView class
+
+    # Department endpoints
+    path('departments/', DepartmentList.as_view()),
+    path('departments/<int:id>', DepartmentMethods.as_view()),
+
+    # Employees endpoints
+    path('employees/register', RegisterEmployee.as_view()),
+    path('employees/', EmployeesList.as_view()),
+    path('employees/<int:id>', EmployeeMethods.as_view())
 ]
