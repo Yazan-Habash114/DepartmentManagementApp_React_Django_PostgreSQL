@@ -1,14 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
+import { side_list_items } from '../iterating-items/side-list-items'
 
 const Container = styled.div`
     background-color: #2f3542;
-    width: 280px;
-    height: 300px;
     padding: 1rem 2px;
     display: flex;
     flex-direction: column;
     align-items: stretch;
+    width: 280px;
 `
 
 const List = styled.ul`
@@ -48,30 +48,20 @@ const SideBar = () => {
     return (
         <Container>
             <List>
-                <ListItem>
-                    <InnerBox>
-                        <i class="fa fa-tachometer" aria-hidden="true"></i>
-                    </InnerBox>
-                    <InnerBox>
-                        Dashboard
-                    </InnerBox>
-                </ListItem>
-                <ListItem>
-                    <InnerBox>
-                        <i class="fa fa-building" aria-hidden="true"></i>
-                    </InnerBox>
-                    <InnerBox>
-                        Departments
-                    </InnerBox>
-                </ListItem>
-                <ListItem>
-                    <InnerBox>
-                        <i class="fa fa-users" aria-hidden="true"></i>
-                    </InnerBox>
-                    <InnerBox>
-                        Employees
-                    </InnerBox>
-                </ListItem>
+                {
+                    side_list_items.map(obj => {
+                        return (
+                            <ListItem id={obj.tag} onClick={(e) => alert(e.target.id)}>
+                                <InnerBox>
+                                    <i class={obj.icon} aria-hidden="true"></i>
+                                </InnerBox>
+                                <InnerBox>
+                                    {obj.tag}
+                                </InnerBox>
+                            </ListItem>
+                        )
+                    })
+                }
             </List>
         </Container>
     )

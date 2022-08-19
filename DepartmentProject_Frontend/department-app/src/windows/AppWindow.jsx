@@ -1,22 +1,21 @@
 import React from 'react'
 import styled from 'styled-components'
 import SideBar from '../components/SideBar'
-import SideWindow from '../components/SideWindow'
+import SideBarSections from '../components/SideBarSections'
 
 const Container = styled.div`
-    border: 1px solid green;
     display: flex;
-    align-items: flex-start;
+    align-items: stretch;
     background-color: #dcdde1;
 `
 
-const MainWindow = () => {
+const AppWindow = () => {
     return (
         <Container>
             <SideBar />
-            <SideWindow />
+            <SideBarSections />
         </Container>
     )
 }
 
-export default MainWindow
+export default AppWindow

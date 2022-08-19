@@ -1,9 +1,9 @@
 import React from 'react'
-import MainPage from './windows/MainWindow'
+import AppWindow from './windows/AppWindow'
 
 const App = () => {
   return (
-    <MainPage />
+    <AppWindow />
   )
 }
 
