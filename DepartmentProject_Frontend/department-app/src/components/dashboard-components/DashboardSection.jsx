@@ -1,25 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
 import TableInfo from './TableInfo'
+import WindowHeader from '../window-header/WindowHeader'
 
 const Container = styled.div``
 
-const Header = styled.nav`
-    background-color: #eee;
-    padding: 2.5rem 1.5rem;
-    margin-bottom: 3rem;
-`
-
-const Title = styled.h1`
-    font-size: 30px
-`
 
 const DashboardSection = () => {
     return (
         <Container>
-            <Header>
-                <Title>View all</Title>
-            </Header>
+            <WindowHeader headerText={"View All"} />
             <TableInfo
                 title={"List Departments"}
                 tableHeaders={[
