@@ -32,7 +32,8 @@ const DashboardSection = () => {
                 tableHeaders={[
                     'Employee Id',
                     'Employee Name',
-                    'Department Id'
+                    'Date of joining',
+                    'Department Name'
                 ]}
             />
         </Container>

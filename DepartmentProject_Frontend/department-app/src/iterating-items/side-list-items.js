@@ -1,14 +1,17 @@
 export const side_list_items = [
     {
         icon: 'fa fa-tachometer',
-        tag: 'Dashboard'
+        tag: 'Dashboard',
+        linkto: '/dashboard'
     },
     {
         icon: 'fa fa-building',
-        tag: 'Departments'
+        tag: 'Departments',
+        linkto: '/departments'
     },
     {
         icon: 'fa fa-users',
-        tag: 'Employees'
+        tag: 'Employees',
+        linkto: '/employees'
     },
 ]

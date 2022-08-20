@@ -1,0 +1,29 @@
+.navlinks {
+    text-decoration: none;
+    color: #fff;
+    font-size: 115%;
+    font-weight: bold;
+}
+
+.side-list-items {
+    list-style-type: none;
+    margin: 1.5rem 0;
+    background-color: #2ed573;
+    cursor: pointer;
+    padding: 15px 8px;
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    transition: 1s;
+}
+
+.side-list-items:hover {
+    background-color: #7bed9f;
+    border-top-left-radius: 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 5px;
+    color: #2f3542;
+}

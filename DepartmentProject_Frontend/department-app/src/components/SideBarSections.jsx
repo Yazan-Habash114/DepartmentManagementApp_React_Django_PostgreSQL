@@ -1,8 +1,7 @@
 import React from 'react'
+import { Routes, Route } from 'react-router-dom'
 import styled from 'styled-components'
 import DashboardSection from './dashboard-components/DashboardSection'
-
-// I need to create a react context here
 
 const Container = styled.div`
     flex: 1;
@@ -11,7 +10,9 @@ const Container = styled.div`
 const SideBarSections = () => {
     return (
         <Container>
-            <DashboardSection />
+            <Routes>
+                <Route path="/dashboard" element={<DashboardSection />} />
+            </Routes>
         </Container>
     )
 }

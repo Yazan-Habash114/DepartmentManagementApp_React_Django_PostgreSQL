@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import SideBar from '../components/SideBar'
+import SideBar from '../components/sidebar-component/SideBar'
 import SideBarSections from '../components/SideBarSections'
+import { BrowserRouter } from 'react-router-dom'
 
 const Container = styled.div`
     display: flex;
@@ -12,8 +13,10 @@ const Container = styled.div`
 const AppWindow = () => {
     return (
         <Container>
-            <SideBar />
-            <SideBarSections />
+            <BrowserRouter>
+                <SideBar />
+                <SideBarSections />
+            </BrowserRouter>
         </Container>
     )
 }

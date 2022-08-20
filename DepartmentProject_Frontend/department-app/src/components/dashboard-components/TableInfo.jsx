@@ -42,8 +42,8 @@ const TableInfo = ({ title, tableHeaders }) => {
                 <TableHeader>
                     <Row>
                         {
-                            tableHeaders.map(header => {
-                                return <Header>{header}</Header>
+                            tableHeaders.map((header, index) => {
+                                return <Header key={index}>{header}</Header>
                             })
                         }
                     </Row>
